@@ -1,0 +1,60 @@
+
+
+$default-prefixes: webkit moz ms o;
+
+@mixin prefix($attr, $value, $prefixes: $default-prefixes) {
+  // Output each prefixed rule
+	@each $prefix in $prefixes {
+		-#{$prefix}-#{$attr}: #{$value};
+	}
+  // Non prefixed rule
+	#{$attr}: #{$value};
+}
+
+@mixin transition($attr: all, $delay: .8s, $fx: ease-in-out) {
+	$value: $attr $delay $fx;
+	@include prefix('transition', $value);
+}
+
+@mixin transform($attr, $value) {
+	$property: str_insert($attr, '()', -1);
+	$prop: str_insert($property, #{$value}, -2);
+	@include prefix('transform', $prop);
+}
+
+
+  .rolldown-list li {
+    @include transition();
+    @include transform(translateX, -100%);
+    &:hover{
+      @include transform(translateX, 0);
+      &::after{
+
+      }
+    } 
+
+    padding: 1em;
+    margin-bottom: .125em;
+    display: block;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  
+  
+.rolldown-list li:nth-child(2n) {
+  background-color: #444;
+}
+
+.rolldown-list li:nth-child(2n+1) {
+  background-color: #333;
+}
+
+#myList {
+  position: absolute;
+  width: 50%; 
+  left: 50%;
+  margin-left: -25%;
+    height: 150px;
+    overflow-y: scroll;
+}

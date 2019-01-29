@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.google.com/specimen/Nunito?selection.family=Nunito");
+
+$font-family: 'Nunito', sans-serif;
+
+$theme-colors: (
+  'primary': (
+    'base': #384ea9,
+    'light': #e4efff,
+    'dark': #273677
+  ),
+  'accent': (
+    'base': #f08110,
+    'light': #ff8100,
+    'dark': #e47f17
+  ),
+  'foreground': (
+    'base': #393939,
+    'light': #6e6e6e,
+    'dark': #111
+  ),
+  'background': (
+    'base': #f8f5f5,
+    'light': #fff,
+    'dark': #ddd
+  )
+);
+
+
+body {
+  font-family: $font-family;
+}
