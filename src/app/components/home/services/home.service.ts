@@ -14,23 +14,7 @@ export class HomeService {
 
 
     getAll(): Observable<any> {
-        return this.http.get<any>(`${globals.configUrl}/users`);
-    }
-
-    getByEmailAndPassword(email: string, password: string): Observable<any> {
-        return this.http.get<any>(`${globals.configUrl}/users?email=${email}&password=${password}`);
-    }
-
-    add(user: any): Observable<any> {
-        return this.http.post<any>(`${globals.configUrl}/users`, user);
-    }
-
-    getPassword(password: string): Observable<any> {
-        return this.http.get<any>(`${globals.configUrl}/users?password=${password}`);
-    }
-
-    getUserByEmail(email: string): Observable<any> {
-        return this.http.get<any>(`${globals.configUrl}/users?email=${email}`);
+        return this.http.get<any>(`${globals.tvShows}`);
     }
 
 }
