@@ -4,7 +4,11 @@ $font-family: 'Nunito', sans-serif;
 
 body {
   font-family: $font-family;
-  background-image: url("../src/assets/img/bg-wallpaper.jpg");
+  background: url("../src/assets/img/bg-big-wallp-sm.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .bg-img{
   &:before {
@@ -16,8 +20,8 @@ body {
     bottom: 0;
     left: 0;
     background-size: cover;
-    background-image: radial-gradient(farthest-corner at 100px 100px, #f00, #0f0, #00f,  #0ff #000, #000, #000, #f00, #0f0, #00f,#f00, #0f0,  );
-    opacity: .7; 
+    background-image: radial-gradient(farthest-corner at 100px 100px,  rgba(0,0,0,0.5),  rgba(0,0,0,0.5), rgba(0,0,0,0.5),  rgba(0,0,0,0.5),  rgba(0,0,0,0.5),  rgba(0,0,0,0.5), #000, #000, #000,  #000, #000, #000);
+    opacity: 0.9; 
   }
 
 }
