@@ -2,30 +2,22 @@
 
 $font-family: 'Nunito', sans-serif;
 
-$theme-colors: (
-  'primary': (
-    'base': #384ea9,
-    'light': #e4efff,
-    'dark': #273677
-  ),
-  'accent': (
-    'base': #f08110,
-    'light': #ff8100,
-    'dark': #e47f17
-  ),
-  'foreground': (
-    'base': #393939,
-    'light': #6e6e6e,
-    'dark': #111
-  ),
-  'background': (
-    'base': #f8f5f5,
-    'light': #fff,
-    'dark': #ddd
-  )
-);
-
-
 body {
   font-family: $font-family;
+  background-image: url("../src/assets/img/bg-wallpaper.jpg");
+}
+.bg-img{
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-image: radial-gradient(farthest-corner at 100px 100px, #f00, #0f0, #00f,  #0ff #000, #000, #000, #f00, #0f0, #00f,#f00, #0f0,  );
+    opacity: .7; 
+  }
+
 }
