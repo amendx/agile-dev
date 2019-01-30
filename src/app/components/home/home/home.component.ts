@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../services/home.service';
+import { tvShow } from '../models/show.model';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,9 @@ import { HomeService } from '../services/home.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  tvShow: any;
-  title: any;
+
+  currentTvShow = <tvShow>{};
+
   constructor(private tvShowService: HomeService) { }
 
   ngOnInit() {
@@ -17,8 +19,7 @@ export class HomeComponent implements OnInit {
 
   getTvShow() {
     this.tvShowService.getAll().subscribe(data => {
-      this.tvShow = data;
-      this.title = data.Title;
+      this.currentTvShow = data;
       console.log(data);
     })
   }

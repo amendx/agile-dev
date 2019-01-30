@@ -1,9 +1,7 @@
-<div class="container">
-  <div class="list-wrap">
-    <ul class="rolldown-list" id="myList">
-      <li *ngFor="let ep of episodes">
-        {{ep.Title}}
-      </li>
-    </ul>
-  </div>
+<div class="list-wrap">
+  <ul class="list-wrap__episode-list" id="ep-list">
+    <li class="list-wrap__episode" *ngFor="let episode of currentEpisodes">
+      {{episode.Title}}
+    </li>
+  </ul>
 </div>

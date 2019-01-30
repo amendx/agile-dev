@@ -22,15 +22,11 @@ $default-prefixes: webkit moz ms o;
 	@include prefix('transform', $prop);
 }
 
-
-  .rolldown-list li {
+  .list-wrap__episode-list li {
     @include transition();
     @include transform(translateX, -100%);
     &:hover{
       @include transform(translateX, 0);
-      &::after{
-
-      }
     } 
 
     padding: 1em;
@@ -40,17 +36,15 @@ $default-prefixes: webkit moz ms o;
     text-transform: uppercase;
   }
 
-  
-  
-.rolldown-list li:nth-child(2n) {
+.list-wrap__episode-list li:nth-child(2n) {
   background-color: #444;
 }
 
-.rolldown-list li:nth-child(2n+1) {
+.list-wrap__episode-list li:nth-child(2n+1) {
   background-color: #333;
 }
 
-#myList {
+#ep-list {
   position: absolute;
   width: 50%; 
   left: 50%;

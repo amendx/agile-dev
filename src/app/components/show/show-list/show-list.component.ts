@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShowsService } from '../../show/services/shows.service';
+import { episodes } from '../models/episodes.model';
 
 @Component({
   selector: 'app-show-list',
@@ -9,7 +10,9 @@ import { ShowsService } from '../../show/services/shows.service';
 export class ShowListComponent implements OnInit {
 
   constructor(private showService: ShowsService) { }
-  episodes = [];
+
+  currentEpisodes = [<episodes>{}];
+
   ngOnInit() {
     this.getShows();
   }
@@ -18,7 +21,8 @@ export class ShowListComponent implements OnInit {
     this.showService.getAll().subscribe(data => {
       data.forEach(el => {
         if (el !== null)
-          this.episodes.push(el);
+          this.currentEpisodes.push(el);
+        console.log(el);
       });
     });
 
