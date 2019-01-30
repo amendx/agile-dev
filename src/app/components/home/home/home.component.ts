@@ -10,7 +10,7 @@ import { tvShow } from '../models/show.model';
 export class HomeComponent implements OnInit {
 
   currentTvShow = <tvShow>{};
-
+  currentTvShowDetails: string;
   constructor(private tvShowService: HomeService) { }
 
   ngOnInit() {
@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   getTvShow() {
     this.tvShowService.getAll().subscribe(data => {
       this.currentTvShow = data;
+      this.currentTvShowDetails = `80% INDICADO / CIENCIA FICCION / ${this.currentTvShow.Year} / EUA / 14`;
       console.log(data);
     })
   }
