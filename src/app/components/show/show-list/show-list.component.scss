@@ -1,54 +1,38 @@
-
-
-$default-prefixes: webkit moz ms o;
-
-@mixin prefix($attr, $value, $prefixes: $default-prefixes) {
-  // Output each prefixed rule
-	@each $prefix in $prefixes {
-		-#{$prefix}-#{$attr}: #{$value};
-	}
-  // Non prefixed rule
-	#{$attr}: #{$value};
+.list-wrap {
+    box-shadow: #333;
+    width: 400px;
+    margin-right: 60px;
+    float: right;
+    border: solid 8px rgb(46, 46, 46);
+    justify-content: flex-end;
+    .list-wrap__episode {
+        flex-direction: column;
+        padding: 20px;
+        counter-reset: done-items pending-items
+    }
 }
 
-@mixin transition($attr: all, $delay: .8s, $fx: ease-in-out) {
-	$value: $attr $delay $fx;
-	@include prefix('transition', $value);
-}
-
-@mixin transform($attr, $value) {
-	$property: str_insert($attr, '()', -1);
-	$prop: str_insert($property, #{$value}, -2);
-	@include prefix('transform', $prop);
-}
-
-  .list-wrap__episode-list li {
-    @include transition();
-    @include transform(translateX, -100%);
-    &:hover{
-      @include transform(translateX, 0);
-    } 
-
-    padding: 1em;
-    margin-bottom: .125em;
+.list-wrap__episode {
     display: block;
-    list-style: none;
-    text-transform: uppercase;
-  }
-
-.list-wrap__episode-list li:nth-child(2n) {
-  background-color: #444;
+    position: relative;
+    padding: 10px 0 10px 40px;
+    border-top: dashed 1px #fff;
+    cursor: pointer;
+    counter-increment: pending-items;
+    &:hover {
+        background: rgba(#fff, .4);
+    }
+    &::before {
+        content: url('../../../../assets/logos/play-small-player-w.svg');
+        font: 28px 'FontAwesome';
+        display: block;
+        position: absolute;
+        padding-top: 4px;
+        left: 10px;
+        top: 8px;
+    }
 }
 
-.list-wrap__episode-list li:nth-child(2n+1) {
-  background-color: #333;
-}
-
-#ep-list {
-  position: absolute;
-  width: 50%; 
-  left: 50%;
-  margin-left: -25%;
-    height: 150px;
-    overflow-y: scroll;
+.list-wrap__title {
+    padding-left: 40px
 }

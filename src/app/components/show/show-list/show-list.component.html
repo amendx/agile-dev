@@ -1,7 +1,10 @@
-<div class="list-wrap">
-  <ul class="list-wrap__episode-list" id="ep-list">
+<div class=" list-wrap">
+  <h1>My To-Do List</h1>
+  <div class="list-wrap__episode-list">
+
     <li class="list-wrap__episode" *ngFor="let episode of currentEpisodes">
-      {{episode.Title}}
+      <span class="list-wrap__title"> {{episode.Title}} </span>
     </li>
-  </ul>
+
+  </div>
 </div>

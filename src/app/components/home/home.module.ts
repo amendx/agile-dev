@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
     imports: [
@@ -16,6 +15,6 @@ import { LoginComponent } from './login/login.component';
     exports: [
         HomeComponent,
     ],
-    declarations: [HomeComponent, LoginComponent]
+    declarations: [HomeComponent]
 })
 export class HomeModule { }

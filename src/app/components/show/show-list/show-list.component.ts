@@ -16,7 +16,9 @@ export class ShowListComponent implements OnInit {
   ngOnInit() {
     this.getShows();
   }
-
+  whatName($e) {
+    console.log($e);
+  }
   getShows() {
     this.showService.getAll().subscribe(data => {
       data.forEach(el => {
