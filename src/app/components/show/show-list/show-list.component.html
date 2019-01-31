@@ -6,6 +6,9 @@
     <label for="tab2">T2</label>
     <div class="line"></div>
 
+
+
+
     <div class="tab-contents">
       <div id="tab-content1" class="item">
         <div class="list-wrap__episode-list">
@@ -20,11 +23,13 @@
         </div>
       </div>
       <div id="tab-content2" class="item">
-        <li class="list-wrap__episode" *ngFor="let episode of currentEpisodes2">
-          <span *ngIf="episode.SeasonNumber == 2 && episode.SeasonNumber != 1" class="list-wrap__title">
+        <li class="list-wrap__episode btn-2" *ngFor="let episode of currentEpisodes2">
+          <span class="list-wrap__title" *ngIf="episode.SeasonNumber == 2 && episode.SeasonNumber != 1">
             {{episode.EpisodeNumber}} {{episode.Title}}
-            <span class="list-wrap__icon"></span>
+            <span class="list-wrap__icon ">
+            </span>
           </span>
+
         </li>
       </div>
 
@@ -32,9 +37,35 @@
   </div>
 </div>
 
-<!-- 
-<span *ngFor="let season of seasons">
-    <input type="radio" id="tab{{season}}" name="tab" *ngIf="season == 1" checked="checked">
-    <input type="radio" id="tab{{season}}" name="tab" *ngIf="season != 1">
-    <label for="tab{{season}}">T{{season}}</label>
-  </span> -->
+
+<div class="footer">
+  <div class="general-tabs">
+    <div class="general-tabs__header">
+      <div class="tabs-footer">
+        <input type="radio" id="tabf1" name="tab" checked="checked">
+        <label for="tabf1">GERAL</label>
+        <input type="radio" id="tabf2" name="tab">
+        <label for="tabf2">ELENCO</label>
+        <input type="radio" id="tabf3" name="tab">
+        <label for="tabf3">PRINCIPAIS PRÊMIOS</label>
+
+        <div class="line"></div>
+      </div>
+
+
+
+      <div class="tab-contents-footer">
+        <div id="tab-contentf1" class="itemf">
+
+        </div>
+        <div id="tab-contentf2" class="itemf">
+
+        </div>
+        <div id="tab-contentf3" class="itemf">
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
