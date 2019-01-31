@@ -1,38 +1,97 @@
-.list-wrap {
-    box-shadow: #333;
-    width: 400px;
-    margin-right: 60px;
-    float: right;
-    border: solid 8px rgb(46, 46, 46);
-    justify-content: flex-end;
-    .list-wrap__episode {
-        flex-direction: column;
-        padding: 20px;
-        counter-reset: done-items pending-items
-    }
+*,
+::after,
+::before {
+    box-sizing: initial !important;
 }
 
 .list-wrap__episode {
     display: block;
     position: relative;
-    padding: 10px 0 10px 40px;
-    border-top: dashed 1px #fff;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid rgba(75, 75, 75, 0.5);
     cursor: pointer;
     counter-increment: pending-items;
     &:hover {
-        background: rgba(#fff, .4);
-    }
-    &::before {
-        content: url('../../../../assets/logos/play-small-player-w.svg');
-        font: 28px 'FontAwesome';
-        display: block;
-        position: absolute;
-        padding-top: 4px;
-        left: 10px;
-        top: 8px;
+        background: rgba(rgb(241, 25, 25), .4);
     }
 }
 
 .list-wrap__title {
-    padding-left: 40px
+    margin-left: 30px;
+}
+
+.list-wrap__icon {
+    content: url('../../../../assets/logos/play-small-player-w.svg');
+    float: right;
+    width: 30px;
+    margin: -3px 10px 0 0;
+}
+
+// stop
+.box-tabs {
+    position: relative;
+    float: right;
+    width: 500px;
+    margin: 80px 80px auto;
+    .line {
+        width: 28%;
+        border-bottom: 3px solid rgb(6, 133, 23);
+        position: absolute;
+        top: 65px;
+        transition: all 500ms ease;
+    }
+}
+
+.tabs {
+    margin: 0;
+    padding-top: 0;
+    list-style: none;
+    letter-spacing: -0.33em;
+    label {
+        position: relative;
+        font-weight: normal;
+        letter-spacing: normal;
+        display: inline-block;
+        cursor: pointer;
+        width: 20%;
+        text-align: center;
+        border-bottom: solid 1px rgba(75, 75, 75, 0.5);
+        padding: 20px;
+        background: #fff;
+        transition: all 500ms ease;
+        margin: auto;
+    }
+    input {
+        display: none;
+        cursor: pointer;
+        &:checked+label {
+            background: #fff;
+            color: rgb(6, 133, 23);
+        }
+    }
+    $position: 0%;
+    @for $i from 1 through 5 {
+        #tab#{$i}:checked~.line {
+            @if($i>1) {
+                $position: $position+28%;
+            }
+            left: $position;
+        }
+    }
+}
+
+.tab-contents {
+    letter-spacing: normal;
+    background: #fff;
+    height: 60vh;
+    padding-top: 10px;
+    .item {
+        display: none;
+    }
+}
+
+@for $i from 1 through 5 {
+    #tab#{$i}:checked~.tab-contents #tab-content#{$i} {
+        display: block;
+    }
 }
