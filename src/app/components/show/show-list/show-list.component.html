@@ -37,7 +37,7 @@
   </div>
 </div>
 
-
+<!-- 
 <div class="footer">
   <div class="general-tabs">
     <div class="general-tabs__header">
@@ -54,31 +54,36 @@
 
 
 
-      <div class="tab-contents">
-        <div id="tab-content1" class="item">
-          <div class="list-wrap__episode-list">
+      <div class="tab-contents-footer">
+        <div id="tab-contentf1" class="itemf">
 
-            <li class="list-wrap__episode" *ngFor="let episode of currentEpisodes1">
-              <span *ngIf="episode.SeasonNumber ==1" class="list-wrap__title"> {{episode.EpisodeNumber}}
-                {{episode.Title}}
-                <span class="list-wrap__icon"></span>
-              </span>
-            </li>
-
-          </div>
+          IUAHFIUAGHIUAHGIUAGH
         </div>
-        <div id="tab-content2" class="item">
-          <li class="list-wrap__episode btn-2" *ngFor="let episode of currentEpisodes2">
-            <span class="list-wrap__title" *ngIf="episode.SeasonNumber == 2 && episode.SeasonNumber != 1">
-              {{episode.EpisodeNumber}} {{episode.Title}}
-              <span class="list-wrap__icon ">
-              </span>
-            </span>
-
-          </li>
+        <div id="tab-contentf2" class="itemf">
+          <h1>AAAAAA</h1>
         </div>
 
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="box-tabs" id="footer">
+  <div class="tabs">
+    <input type="radio" id="tab4" name="tab" checked="checked">
+    <label for="tab4">Tab 1</label>
+    <input type="radio" id="tab5" name="tab">
+    <label for="tab5">Tab 2</label>
+    <input type="radio" id="tab6" name="tab">
+    <label for="tab6">Tab 3</label>
+
+    <div class="line"></div>
+
+    <div class="tab-contents">
+      <div id="tab-content4" class="item">Content 1</div>
+      <div id="tab-content5" class="item">Content 2</div>
+      <div id="tab-content6" class="item">Content 3</div>
+
     </div>
   </div>
 </div>

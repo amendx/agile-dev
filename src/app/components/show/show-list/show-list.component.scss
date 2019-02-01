@@ -29,12 +29,27 @@
 
 // START SHOW TABS
 .box-tabs {
+    &#footer {
+        bottom: 0%;
+        float: left;
+        position: absolute;
+        width: 100%;
+        height: 26vh;
+        margin: 0;
+        .line {
+            width: 30%;
+            border-bottom: 3px solid rgb(6, 133, 23);
+            position: absolute;
+            top: 65px;
+            transition: all 500ms ease;
+        }
+    }
     position: relative;
     float: right;
     width: 500px;
     margin: 80px 80px auto;
     .line {
-        width: 28%;
+        width: 30%;
         border-bottom: 3px solid rgb(6, 133, 23);
         position: absolute;
         top: 65px;
@@ -70,6 +85,16 @@
         }
     }
     $position: 0%;
+    &#footer {
+        @for $i from 4 through 6 {
+            #tab#{$i}:checked~.line {
+                @if($i>1) {
+                    $position: $position+28%;
+                }
+                left: $position;
+            }
+        }
+    }
     @for $i from 1 through 5 {
         #tab#{$i}:checked~.line {
             @if($i>1) {
@@ -98,8 +123,7 @@
 
 // END SHOW CONTENT
 .footer {
-    background: #f00;
-    padding: 29px;
+    background: #f00; // padding: 29px;
     height: 16vh;
     width: 100%;
     position: absolute;
@@ -117,10 +141,10 @@
             border-bottom: solid 1px rgba(75, 75, 75, 0.5);
         }
         .line {
-            width: 5%;
+            width: 8%;
             border-bottom: 3px solid rgb(6, 133, 23);
             position: absolute;
-            top: 65px;
+            top: 50px;
             margin-left: 4%;
             transition: all 500ms ease;
         }
@@ -139,7 +163,8 @@
             letter-spacing: normal;
             display: inline-block;
             cursor: pointer;
-            width: 11%;
+            height: 10px;
+            width: 13%;
             text-align: center;
             border-bottom: solid 1px rgba(75, 75, 75, 0.5);
             padding: 20px;
