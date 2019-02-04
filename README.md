@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
+## Try it Out
+
+To try the project out `git clone` the project to a local folder and then run `npm install` to inject all the dependencies needed. After that, just hit `npm start`.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
