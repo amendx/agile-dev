@@ -13,13 +13,19 @@
       <div id="tab-content1" class="item">
         <div class="list-wrap__episode-list">
 
-          <li class="list-wrap__episode" *ngFor="let episode of currentEpisodes1">
-            <span *ngIf="episode.SeasonNumber ==1" class="list-wrap__title"> {{episode.EpisodeNumber}}
+          <li class="list-wrap__episode" *ngFor="let episode of currentEpisodes1; let i = index ">
+            <span *ngIf="episode.SeasonNumber == 1" (click)="hideme[i] = !hideme[i]" class="list-wrap__title">
+              {{episode.EpisodeNumber}}
               {{episode.Title}}
               <span class="list-wrap__icon"></span>
-            </span>
-          </li>
+              <!-- <div *ngIf="isClosed"> -->
+              <div [hidden]="!hideme[i]">
+                {{episode.Title}}
+              </div>
 
+            </span>
+
+          </li>
         </div>
       </div>
       <div id="tab-content2" class="item">
@@ -37,53 +43,116 @@
   </div>
 </div>
 
-<!-- 
-<div class="footer">
-  <div class="general-tabs">
-    <div class="general-tabs__header">
-      <div class="tabs-footer">
-        <input type="radio" id="tabf1" name="tab" checked="checked">
-        <label for="tabf1">GERAL</label>
-        <input type="radio" id="tabf2" name="tab">
-        <label for="tabf2">ELENCO</label>
-        <input type="radio" id="tabf3" name="tab">
-        <label for="tabf3">PRINCIPAIS PRÊMIOS</label>
+<div class="wrapper">
 
-        <div class="line"></div>
+  <div class="tab-panels">
+
+    <!-- Input Tabs -->
+    <input type="radio" id="test1" name="tabt" checked="checked" />
+    <input type="radio" id="test2" name="tabt" />
+    <input type="radio" id="test4" name="tabt" />
+    <!-- End Input Tabs -->
+
+
+
+    <!-- Start Tabs -->
+    <div class="tabs">
+      <div class="tab">
+        <label for="test1" onclick>
+          <div class="content">
+            <div class="text">GERAL</div>
+          </div>
+        </label>
+      </div>
+      <div class="tab">
+        <label for="test2" onclick>
+          <div class="content">
+            <div class="text">ELENCO</div>
+          </div>
+        </label>
       </div>
 
-
-
-      <div class="tab-contents-footer">
-        <div id="tab-contentf1" class="itemf">
-
-          IUAHFIUAGHIUAHGIUAGH
-        </div>
-        <div id="tab-contentf2" class="itemf">
-          <h1>AAAAAA</h1>
-        </div>
-
+      <div class="tab">
+        <label for="test4" onclick>
+          <div class="content">
+            <div class="text">Tab 4</div>
+          </div>
+        </label>
       </div>
     </div>
-  </div>
-</div> -->
+    <!-- End Tabs -->
 
-<div class="box-tabs" id="footer">
-  <div class="tabs">
-    <input type="radio" id="tab4" name="tab" checked="checked">
-    <label for="tab4">Tab 1</label>
-    <input type="radio" id="tab5" name="tab">
-    <label for="tab5">Tab 2</label>
-    <input type="radio" id="tab6" name="tab">
-    <label for="tab6">Tab 3</label>
+    <div class="separator"></div>
 
-    <div class="line"></div>
+    <!-- Start Panels -->
+    <div class="panels">
 
-    <div class="tab-contents">
-      <div id="tab-content4" class="item">Content 1</div>
-      <div id="tab-content5" class="item">Content 2</div>
-      <div id="tab-content6" class="item">Content 3</div>
+      <!-- Start Tab Panel -->
+      <div class="tab-panel" id="panel1">
+        <!-- <div class="content"> -->
+        <div class="container">
+          <div class="tab-panel__icons row">
+            <div class="tab-panel__holder">
+              <span class="tab-panel__icon1">
+              </span>
+              <span class="tab-panel__title"> Minha Lista</span>
+            </div>
+            <div class="tab-panel__holder">
+              <span class="tab-panel__icon2">
+              </span>
+              <span class="tab-panel__title"> Avaliar</span>
+            </div>
+            <div class="tab-panel__holder">
+              <span class="tab-panel__icon3">
+              </span>
+              <span class="tab-panel__title"> Gravar</span>
+            </div>
+            <div class="tab-panel__holder">
+              <span class="tab-panel__icon4">
+              </span>
+              <span class="tab-panel__title"> Compartilhar</span>
+            </div>
+            <div class="tab-panel__holder">
+              <span class="tab-panel__title">SINOPSE</span>
+              <span class="tab-panel__description">
+                {{currentShow.Synopsis}}
+              </span>
+            </div>
+          </div>
+          <!-- </div> -->
+
+
+        </div>
+      </div>
+      <!-- End Tab Panel -->
+
+      <!-- Start Tab Panel -->
+      <div class="tab-panel" id="panel2">
+        <div class="content">
+          Content 2
+        </div>
+      </div>
+      <!-- End Tab Panel -->
+
+      <!-- Start Tab Panel -->
+      <div class="tab-panel" id="panel3">
+        <div class="content">
+          Content 3
+        </div>
+      </div>
+      <!-- End Tab Panel -->
+
+      <!-- Start Tab Panel -->
+      <div class="tab-panel" id="panel4">
+        <div class="content">
+          Content 4
+        </div>
+      </div>
+      <!-- End Tab Panel -->
 
     </div>
+    <!-- End Panels -->
+
   </div>
+
 </div>
