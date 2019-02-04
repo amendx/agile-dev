@@ -197,6 +197,7 @@ $separator-height: 0.188rem; //3px
 .wrapper {
     width: 100%;
     bottom: 0;
+    background-image: linear-gradient(to right, rgba(87, 87, 87, 0.2), rgba(145, 145, 145, 0));
     position: absolute;
     /* Makes the checkbox hack work for Android 4.1.2 */
     @-webkit-keyframes checkbox-hack-bugfix {
