@@ -27,6 +27,21 @@
     margin: -3px 10px 0 0;
 }
 
+.show-cast {
+    // border: 1px;
+    margin-left: 10%;
+    border: 0; // box-sizing: border-box;
+    margin: 1em;
+    width: 20%;
+    padding: 1em 2em;
+    background-color: rgba(54, 62, 78, 0.5);
+    &__name {
+        text-align: center;
+        padding-left: 0;
+        margin: auto;
+    }
+}
+
 .show-details {
     flex-direction: column;
     display: flex;
@@ -53,6 +68,9 @@
     float: right;
     width: 500px;
     overflow: hidden;
+    &::after {
+        z-index: -2;
+    }
     margin: 80px 80px auto;
     .line {
         width: 30%;
@@ -81,7 +99,7 @@
         padding: 20px;
         background: transparent;
         transition: all 500ms ease;
-        margin: auto;
+        margin: auto; // font-size: 16px;
     }
     input {
         display: none;
@@ -156,7 +174,7 @@
 
 //
 // ksdfiadhfiasdf
-$number-of-tabs: 3;
+$number-of-tabs: 4;
 $separator-height: 0.188rem; //3px
 @mixin user-select() {
     -webkit-touch-callout: none;
@@ -197,8 +215,10 @@ $separator-height: 0.188rem; //3px
 .wrapper {
     width: 100%;
     bottom: 0;
+    max-height: 213px;
+    z-index: 5;
     background-image: linear-gradient(to right, rgba(87, 87, 87, 0.2), rgba(145, 145, 145, 0));
-    position: absolute;
+    position: fixed;
     /* Makes the checkbox hack work for Android 4.1.2 */
     @-webkit-keyframes checkbox-hack-bugfix {
         from {
@@ -232,9 +252,11 @@ $separator-height: 0.188rem; //3px
                             .tab {
                                 label[for="test#{$i}"] {
                                     color: rgb(6, 133, 23);
-                                    cursor: default;
+                                    cursor: default; // width: 75%;
                                     &::after {
                                         opacity: 1;
+                                        width: 75%;
+                                        margin-left: 16%;
                                     }
                                 }
                             }
@@ -264,10 +286,20 @@ $separator-height: 0.188rem; //3px
             left: 0;
             text-align: initial; // }
             width: 36%;
-            padding-left: 2%;
+            padding-left: 4%;
+            position: relative;
             margin-bottom: 30px;
             & .tab-panel__description {
-                width: 900px;
+                max-width: 820px;
+                width: 820px;
+                max-height: 60px;
+                height: 60px;
+                &::-webkit-scrollbar {
+                    width: 0 !important
+                }
+                -ms-overflow-style: none;
+                overflow-y: scroll;
+                overflow: -moz-scrollbars-none;
             }
         }
     }
@@ -295,6 +327,7 @@ $separator-height: 0.188rem; //3px
     .tab-panels {
         background: transparent;
         bottom: 0%;
+        margin: 20px;
         position: relative;
         left: 0;
         .tabs {
@@ -307,7 +340,6 @@ $separator-height: 0.188rem; //3px
                 flex: 1;
                 width: 25%;
                 flex-basis: auto;
-                /* We need to define flex-grow here aside from flex for IE10 because it defaults to something else. */
                 flex-grow: 1;
                 position: relative;
                 width: 60%; // margin-top: 2.5rem; //40px
@@ -316,8 +348,20 @@ $separator-height: 0.188rem; //3px
                 text-align: center;
                 height: 40px; // color: #707a89;
                 background-color: transparent;
+                .icon_tele-cine {
+                    @media screen and (max-width: 1366px) {
+                        right: 6%;
+                    }
+                    right: 5%;
+                    position: fixed;
+                    content: url('../../../../assets/logos/logo-telecine.svg'); // margin-left: 2190%;
+                }
+                &:last-child {
+                    justify-content: flex-end;
+                }
                 cursor: pointer;
-                transition: background-color 0.3s, color 0.3s ease;
+                transition: background-color 0.3s,
+                color 0.3s ease;
                 label {
                     @include user-select();
                     display: block;
@@ -328,15 +372,11 @@ $separator-height: 0.188rem; //3px
                     border: none;
                     cursor: pointer;
                     .content {
-                        .icon {
-                            margin-bottom: 1rem;
-                            font-size: 1.375rem;
-                            text-align: center;
-                        }
+                        width: 175px;
                         .text {
                             margin-bottom: 0.5 rem;
-                            font-size: 0.875rem;
-                            padding-top: 10px;
+                            font-size: 0.875rem; // padding-top: 10px;
+                            font-size: 16px;
                         }
                     }
                     &::after {
@@ -358,8 +398,13 @@ $separator-height: 0.188rem; //3px
             }
         }
         .separator {
-            width: 100%;
+            @media screen and (max-width: 1366px) {
+                width: 94%;
+                margin-left: 24px;
+            }
+            width: 95%;
             height: 1px;
+            margin-left: 30px;
             margin-bottom: .5rem; // 40px
             background-color: #363e4e;
         }

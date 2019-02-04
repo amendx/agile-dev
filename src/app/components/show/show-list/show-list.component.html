@@ -84,11 +84,17 @@
       </div>
 
       <div class="tab">
+
         <label for="test4" onclick>
           <div class="content">
             <div class="text">PRINCIPAIS PRÊMIOS</div>
           </div>
         </label>
+
+
+      </div>
+      <div class="tab">
+        <span class="icon_tele-cine"></span>
       </div>
     </div>
     <!-- End Tabs -->
@@ -127,6 +133,8 @@
               <span class="tab-panel__title">SINOPSE</span>
               <span class="tab-panel__description">
                 {{currentShow.Synopsis}}
+
+
               </span>
             </div>
           </div>
@@ -141,36 +149,13 @@
       <div class="tab-panel" id="panel2">
         <div class="content">
           <div class="container">
-            <div class="tab-panel__icons row">
-              <div class="tab-panel__holder">
-                <span class="tab-panel__icon1">
-                </span>
-                <span class="tab-panel__title"> Minha Lista</span>
-              </div>
-              <div class="tab-panel__holder">
-                <span class="tab-panel__icon2">
-                </span>
-                <span class="tab-panel__title"> Avaliar</span>
-              </div>
-              <div class="tab-panel__holder">
-                <span class="tab-panel__icon3">
-                </span>
-                <span class="tab-panel__title"> Gravar</span>
-              </div>
-              <div class="tab-panel__holder">
-                <span class="tab-panel__icon4">
-                </span>
-                <span class="tab-panel__title"> Compartilhar</span>
-              </div>
-              <div class="tab-panel__holder">
-                <span class="tab-panel__title">SINOPSE</span>
-                <span class="tab-panel__description">
-                  {{currentShow.Synopsis}}
-                </span>
+            <div class="cast row">
+              <div *ngFor="let cast of currentShow.Cast" class="show-cast">
+                <div class="show-cast__name col-md-2">
+                  <span>{{cast.Name}}</span>
+                </div>
               </div>
             </div>
-            <!-- </div> -->
-
 
           </div>
         </div>

@@ -4,6 +4,7 @@ import { episodes } from '../models/episodes.model';
 import * as _ from 'lodash';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { HomeService } from '../../home/services/home.service';
+import { tvShow } from '../../home/models/show.model';
 
 @Component({
   selector: 'app-show-list',
@@ -26,7 +27,7 @@ export class ShowListComponent implements OnInit {
   currentEpisodes2: episodes[] = [];
   seasons: any[] = [];
   hideme = [];
-  currentShow: any;
+  currentShow = <tvShow>{};
 
   ngOnInit() {
     this.getShows();
