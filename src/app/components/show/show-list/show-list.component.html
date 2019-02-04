@@ -1,30 +1,52 @@
 <div class="box-tabs">
-  <div class="tabs">
+  <div class="tabs" style="left: 0">
     <input type="radio" id="tab1" name="tab" checked="checked">
     <label for="tab1">T1</label>
     <input type="radio" id="tab2" name="tab">
     <label for="tab2">T2</label>
     <div class="line"></div>
 
+
+
+
     <div class="tab-contents">
       <div id="tab-content1" class="item">
         <div class="list-wrap__episode-list">
 
-          <li class="list-wrap__episode" *ngFor="let episode of currentEpisodes1">
-            <span *ngIf="episode.SeasonNumber ==1" class="list-wrap__title"> {{episode.EpisodeNumber}}
+          <li class="list-wrap__episode btn-2" *ngFor="let episode of currentEpisodes1; let i = index ">
+            <span *ngIf="episode.SeasonNumber == 1" (click)="hideme[i] = !hideme[i]" class="list-wrap__title">
+              {{episode.EpisodeNumber}}
               {{episode.Title}}
               <span class="list-wrap__icon"></span>
-            </span>
-          </li>
+              <!-- <div *ngIf="isClosed"> -->
+              <div [hidden]="!hideme[i]">
+                <div class="show-details">
+                  <!-- <img src="episode.Image" class="show-details__image" /> -->
+                  <img src="../../../../assets/logos/mini.jpg" class="show-details__image" />
+                  <span class="show-details__description"> {{episode.Synopsis}}</span>
+                </div>
+              </div>
 
+            </span>
+
+          </li>
         </div>
       </div>
       <div id="tab-content2" class="item">
-        <li class="list-wrap__episode" *ngFor="let episode of currentEpisodes2">
-          <span *ngIf="episode.SeasonNumber == 2 && episode.SeasonNumber != 1" class="list-wrap__title">
+        <li class="list-wrap__episode btn-2" *ngFor="let episode of currentEpisodes2">
+          <span class="list-wrap__title" *ngIf="episode.SeasonNumber == 2 " (click)="hideme[i] = !hideme[i]">
             {{episode.EpisodeNumber}} {{episode.Title}}
-            <span class="list-wrap__icon"></span>
+            <span class="list-wrap__icon ">
+            </span>
+            <div [hidden]="!hideme[i]">
+              <div class="show-details">
+                <!-- <img src="episode.Image" class="show-details__image" /> -->
+                <img src="../../../../assets/logos/mini.jpg" class="show-details__image" />
+                <span class="show-details__description"> {{episode.Synopsis}}</span>
+              </div>
+            </div>
           </span>
+
         </li>
       </div>
 
@@ -32,9 +54,126 @@
   </div>
 </div>
 
-<!-- 
-<span *ngFor="let season of seasons">
-    <input type="radio" id="tab{{season}}" name="tab" *ngIf="season == 1" checked="checked">
-    <input type="radio" id="tab{{season}}" name="tab" *ngIf="season != 1">
-    <label for="tab{{season}}">T{{season}}</label>
-  </span> -->
+<div class="wrapper">
+
+  <div class="tab-panels">
+
+    <!-- Input Tabs -->
+    <input type="radio" id="test1" name="tabt" checked="checked" />
+    <input type="radio" id="test2" name="tabt" />
+    <input type="radio" id="test4" name="tabt" />
+    <!-- End Input Tabs -->
+
+
+
+    <!-- Start Tabs -->
+    <div class="tabs">
+      <div class="tab">
+        <label for="test1" onclick>
+          <div class="content">
+            <div class="text">GERAL</div>
+          </div>
+        </label>
+      </div>
+      <div class="tab">
+        <label for="test2" onclick>
+          <div class="content">
+            <div class="text">ELENCO</div>
+          </div>
+        </label>
+      </div>
+
+      <div class="tab">
+
+        <label for="test4" onclick>
+          <div class="content">
+            <div class="text">PRINCIPAIS PRÊMIOS</div>
+          </div>
+        </label>
+
+
+      </div>
+      <div class="tab">
+        <span class="icon_tele-cine"></span>
+      </div>
+    </div>
+    <!-- End Tabs -->
+
+    <div class="separator"></div>
+
+    <!-- Start Panels -->
+    <div class="panels">
+
+      <!-- Start Tab Panel -->
+      <div class="tab-panel" id="panel1">
+        <!-- <div class="content"> -->
+        <div class="container">
+          <div class="tab-panel__icons row">
+            <div class="tab-panel__holder">
+              <span class="tab-panel__icon1">
+              </span>
+              <span class="tab-panel__title"> Minha Lista</span>
+            </div>
+            <div class="tab-panel__holder">
+              <span class="tab-panel__icon2">
+              </span>
+              <span class="tab-panel__title"> Avaliar</span>
+            </div>
+            <div class="tab-panel__holder">
+              <span class="tab-panel__icon3">
+              </span>
+              <span class="tab-panel__title"> Gravar</span>
+            </div>
+            <div class="tab-panel__holder">
+              <span class="tab-panel__icon4">
+              </span>
+              <span class="tab-panel__title"> Compartilhar</span>
+            </div>
+            <div class="tab-panel__holder">
+              <span class="tab-panel__title">SINOPSE</span>
+              <span class="tab-panel__description">
+                {{currentShow.Synopsis}}
+
+
+              </span>
+            </div>
+          </div>
+          <!-- </div> -->
+
+
+        </div>
+      </div>
+      <!-- End Tab Panel -->
+
+      <!-- Start Tab Panel -->
+      <div class="tab-panel" id="panel2">
+        <div class="content">
+          <div class="container">
+            <div class="cast row">
+              <div *ngFor="let cast of currentShow.Cast" class="show-cast">
+                <div class="show-cast__name col-md-2">
+                  <span>{{cast.Name}}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End Tab Panel -->
+
+      <!-- Start Tab Panel -->
+      <div class="tab-panel" id="panel3">
+        <div class="content">
+          Content 3
+        </div>
+      </div>
+      <!-- End Tab Panel -->
+
+
+    </div>
+    <!-- End Panels -->
+
+  </div>
+
+</div>
