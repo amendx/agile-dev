@@ -86,6 +86,9 @@
     padding-top: 0;
     list-style: none;
     color: #fff;
+    @media screen and (max-width: 1366px) {
+        max-height: 320px;
+    }
     letter-spacing: -0.33em;
     label {
         position: relative;
@@ -174,7 +177,7 @@
 
 //
 // ksdfiadhfiasdf
-$number-of-tabs: 4;
+$number-of-tabs: 3;
 $separator-height: 0.188rem; //3px
 @mixin user-select() {
     -webkit-touch-callout: none;
@@ -420,4 +423,8 @@ $separator-height: 0.188rem; //3px
             }
         }
     }
+}
+
+.prizes {
+    height: 150px;
 }
