@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShowsService } from './services/shows.service';
 import { ShowListComponent } from './show-list/show-list.component';
 
-
 @NgModule({
     imports: [
         CommonModule,
