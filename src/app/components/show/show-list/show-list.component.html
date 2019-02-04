@@ -1,3 +1,4 @@
+<!-- Season Tabs -->
 <div class="box-tabs">
   <div class="tabs" style="left: 0">
     <input type="radio" id="tab1" name="tab" checked="checked">
@@ -77,15 +78,16 @@
     </div>
   </div>
 </div>
+<!-- End of Season Tabs -->
 
+<!-- Tab Footer -->
 <div class="wrapper">
-
   <div class="tab-panels">
 
     <!-- Input Tabs -->
-    <input type="radio" id="test1" name="tabt" checked="checked" />
-    <input type="radio" id="test2" name="tabt" />
-    <input type="radio" id="test4" name="tabt" />
+    <input type="radio" id="tabh1" name="tabt" checked="checked" />
+    <input type="radio" id="tabh2" name="tabt" />
+    <input type="radio" id="tabh4" name="tabt" />
     <!-- End Input Tabs -->
 
 
@@ -93,30 +95,21 @@
     <!-- Start Tabs -->
     <div class="tabs">
       <div class="tab">
-        <label for="test1" onclick>
+        <label for="tabh1" onclick>
           <div class="content">
             <div class="text">GERAL</div>
           </div>
         </label>
       </div>
       <div class="tab">
-        <label for="test2" onclick>
+        <label for="tabh2" onclick>
           <div class="content">
             <div class="text">ELENCO</div>
           </div>
         </label>
       </div>
+      <!-- Missing Content (PRÊMIOS) -->
 
-      <!-- <div class="tab">
-
-        <label for="test4" onclick>
-          <div class="content">
-            <div class="text">PRINCIPAIS PRÊMIOS</div>
-          </div>
-        </label>
-
-
-      </div> -->
       <div class="tab">
         <span class="icon_tele-cine"></span>
       </div>
@@ -180,28 +173,11 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
       <!-- End Tab Panel -->
 
-      <!-- Start Tab Panel -->
-      <div class="tab-panel" id="panel3">
-        <div class="content">
-          <div class="container">
-            <div class="cast row">
-              <div *ngFor="let cast of currentShow.Cast" class="show-cast">
-                <div class="show-cast__name col-md-2">
-                  <span>{{cast.Name}}</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <!-- End Tab Panel -->
 
 
     </div>
@@ -210,3 +186,4 @@
   </div>
 
 </div>
+<!-- End of Tab Footer -->
