@@ -63,7 +63,7 @@ $ ng is not recognized as an internal or external command
 $ alias ng="~/AppData/Roaming/npm/node_modules/@angular/cli/bin/ng"
 ```
   - This means you'll locally create an instance of angular cli to run its internal commands 🚀
-
+  - One more thing, both contributors are mine 🙈
 
 
 ### Step 1
