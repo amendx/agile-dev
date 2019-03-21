@@ -1,27 +1,96 @@
-# AgileDev - Application Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
+# Agile Dev Solutions
 
-## Try it Out
+> A simple webpage creating a mockup of client's products.
 
-To try the project out `git clone` the project to a local folder and then run `npm install` to inject all the dependencies needed. After that, just hit `npm start`.
+**Technologies used**
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [NodeJS (v.11.9.4)](https://nodejs.org/en/)
+- [Angular (v.7.2.9)](http://https://angular.io/)
+- [TypeScript (v.3.3.3)](https://www.typescriptlang.org/)
 
-## Code scaffolding
+**Dependencies**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+- [SASS (v.4.11.0)](https://sass-lang.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Lodash](https://lodash.com/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Installation
 
-## Running unit tests
+### Clone
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Clone this repo to your local machine using `$ git clone https://github.com/amendx/agile-dev/`
 
-## Running end-to-end tests
+### Setup
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+> install all dependencies first
+
+```shell
+$ npm install
+```
+or 
+
+```shell
+$ yarn add
+```
+
+> after that, feel free to run
+```shell
+$ npm start
+```
+> or if you want
+
+```shell
+$ yarn start
+```
+
+### Issues you might face
+
+-  🍌 Lookout for those banana peels on the floor. If you've installed everything correctly and get an error like:
+
+```shell
+$ ng is not recognized as an internal or external command
+```
+- **Don't worry**
+
+> Just run this command: 
+
+```shell
+$ alias ng="~/AppData/Roaming/npm/node_modules/@angular/cli/bin/ng"
+```
+  - This means you'll locally create an instance of angular cli to run its internal commands 🚀
+
+
+
+### Step 1
+
+- **Option 1**
+    - 🍴 Fork this repo!
+
+- **Option 2**
+    - 👯 Clone this repo to your local machine using `https://github.com/amendx/agile-dev`
+
+### Step 2
+- **Money, Honey**
+    - 🐢 Check your favorite episodes and seasons
+    
+    - **Let's rock**
+    - 🐙 See who's on your favorite show. 
+   
+    
+ 
+
+### Step 3
+
+
+ - 📢 Repeat after me....
+
+
+💯💯💯💯💯💯💯💯💯
+#   *YOU'RE HIRED* 
+💯💯💯💯💯💯💯💯💯 
+
+---
+
