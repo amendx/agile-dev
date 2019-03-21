@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
     this.tvShowService.getAll().subscribe(data => {
       this.currentTvShow = data;
       this.currentTvShowDetails = `80% INDICADO / CIENCIA FICCION / ${this.currentTvShow.Year} / EUA / 14`;
-      // console.log(data);
     })
   }
 
