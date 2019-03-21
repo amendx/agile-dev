@@ -1,25 +1,27 @@
 
-# Agile Dev Solutions
+# Agile Dev Solutions 
 
-> A simple webpage creating a mockup of client's products.
+> A simple webpage creating a mockup of client's products. 🎃
+
+
 
 **Technologies used**
 
 
 - [NodeJS (v.11.9.4)](https://nodejs.org/en/)
-- [Angular (v.7.2.9)](http://https://angular.io/)
-- [TypeScript (v.3.3.3)](https://www.typescriptlang.org/)
+- [Angular (v.7.2.9)](http://https://angular.io/) 😻
+- [TypeScript (v.3.3.3)](https://www.typescriptlang.org/) 
 
 **Dependencies**
 
 
-- [SASS (v.4.11.0)](https://sass-lang.com/)
+- [SASS (v.4.11.0)](https://sass-lang.com/) 
 - [Bootstrap](https://getbootstrap.com/)
 - [Lodash](https://lodash.com/)
 
 ## Installation
 
-### Clone
+### Clone 
 
 - Clone this repo to your local machine using `$ git clone https://github.com/amendx/agile-dev/`
 
